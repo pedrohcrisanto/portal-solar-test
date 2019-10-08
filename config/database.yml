@@ -2,11 +2,22 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: postgres
+  user: postgres
+
+
 development:
   <<: *default
-  database: PortalSolarDevTest_development
+  database: portal-solar-dev-test_development
+
+
+test:
+  <<: *default
+  database: portal-solar-dev-test_test
+ 
+
 production:
   <<: *default
-  database: PortalSolarDevTest_production
-  username: PortalSolarDevTest
-  password: <%= ENV['PORTALSOLARDEVTEST_DATABASE_PASSWORD'] %>
+  database: portal-solar-dev-test_production
+  username: portalsolar
+  password: <%= ENV['EXCHANGE_DATABASE_PASSWORD'] %>
