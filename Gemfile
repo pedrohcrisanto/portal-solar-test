@@ -15,6 +15,9 @@ gem 'uglifier', '>= 1.3.0'
 gem "roo", "~> 2.8.0"
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
+gem "font-awesome-rails"
 
 source "https://rails-assets.org" do
   gem "rails-assets-jquery"

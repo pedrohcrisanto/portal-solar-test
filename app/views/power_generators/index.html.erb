@@ -1,47 +1,45 @@
-<div>
-  <div class="header">
-    <div class="logo"><%= image_tag 'ps_logo.png' %></div>
-    <div class="header__title">Geradores de Energia</div>
-  </div>
+<div class="container">
+    <div class="row">
+        <% @power_generators.each do |power_generator| %>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <%= image_tag power_generator.image_url, class: 'power_generator-card__img' %>
+                            <h5 class="text-center card-title"><%= power_generator.name.upcase %></h5>
+                            <h5 class="text-center card-price"><%= number_to_currency(power_generator.price, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %></h5>
+                            <p class="card-text">
+                                <%= power_generator.description %>
+                            </p>
+                    </div>
+                    <button type="button" class="btn btn-frete" data-toggle="modal" data-target="#modalExemplo">
+                        Calcular Frete
+                    </button>
 
-  <div class="searcher gradient">
-    <div class="searcher__radio">
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="searchRadio" id="simpleSearch" value="simple" checked>
-        <label class="form-check-label" for="simpleSearch">Pesquisa simples</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="searchRadio" id="advancedSearch" value="advanced">
-        <label class="form-check-label" for="advancedSearch">Pesquisa Avançada</label>
-      </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Calculo de Frete</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                    <button type="button" class="btn btn-primary">Calcular</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% end %>
     </div>
-
-    <%= form_tag do %>
-      <div class="simple-form">
-        <div class="simple-form__input">
-          <input class="form-control form-control-lg" type="text" placeholder="o que procura?">
-        </div>
-        <div class="simple-form__btn">
-          <button type="submit" class="btn btn-outline-primary btn-lg">Pesquisar</button>
-        </div>
-      </div>
-
-      <div class="advanced-form" style="display:none;">
-        Entradas do usuário para pesquisar uma coleção de geradores de energia com base nas recomendações fornecidas e melhor custo de frete.
-      </div>
-    <% end %>
-  </div>
-
-  <div class="container" >
-    <% @power_generators.each do |power_generator| %>
-      <div class="box card power_generator-card">
-        <%= image_tag power_generator.image_url, class: 'power_generator-card__img' %>
-        <div class="power_generator-card__body">
-          <h2><%= power_generator.name.upcase %></h2>
-          <p class="power_generator-card__price"><%= number_to_currency(power_generator.price, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %></p>
-          <p><strong>Descrição: </strong><%= power_generator.description %></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
+</div>
+<div class="container">
+    <%= paginate @power_generators, theme: 'twitter-bootstrap-4' %>
 </div>

@@ -4,7 +4,7 @@ class PowerGenerator < ApplicationRecord
   validates :width, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }
   validates :lenght, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 200 }
   validates :weight, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 3000 }
-
+  paginates_per 6
   enum structure_type: %i[
     metalico
     ceramico

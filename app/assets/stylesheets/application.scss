@@ -1,5 +1,5 @@
 @import "bootstrap";
-
+@import "font-awesome";
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -128,4 +128,37 @@ p.power_generator-card__price {
 
 .power_generator-card__button {
   color: #e96443;
+}
+
+.logo{
+  width: 60%;
+  height: 60%;
+}
+
+.search-icon{
+  width: 100%;
+  height: 100%;
+}
+.btn-frete{
+  margin: 1%;
+  color: blue;
+}
+.card-body{
+  align-items: center;
+}
+.card-price{
+  color: green;
+}
+.card{
+ border: 1.5px solid lightgrey;
+ margin: 1%;
+ padding: 3%;
+ align-items: center;
+}
+.card-title{
+  color: blue;
+  margin-top: 10%;
+}
+.card-text{
+  text-align: justify;
 }
