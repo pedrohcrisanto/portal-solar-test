@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem "font-awesome-rails"
+gem "pg_search"
 
 source "https://rails-assets.org" do
   gem "rails-assets-jquery"

@@ -17,8 +17,8 @@
 <%= image_tag("ps_logo.png", :class => "logo") %>
 </a>
 <div class="navbar-right">
- <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+ <form class="form-inline" action="/search">
+    <input class="form-control mr-sm-2" type="search" name="keywords" placeholder="Pesquisar" aria-label="Pesquisar">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
   </form>
   </div>

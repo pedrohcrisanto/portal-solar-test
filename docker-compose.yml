@@ -16,7 +16,6 @@ services:
     volumes:
       - .:/portal-solar-dev-test
       - gems:/gems
- 
 
 volumes:
   postgres:
