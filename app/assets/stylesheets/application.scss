@@ -162,3 +162,21 @@ p.power_generator-card__price {
 .card-text{
   text-align: justify;
 }
+.btn-cep{
+  background-color:blue;
+  color: white;
+  border-radius:0px 
+}
+.btn-cep:hover {
+  color: white;
+  background-color: green;
+  border-color: green;
+  border-radius:0px 
+}
+.input-cep{
+  border-color: blue;
+  border-radius:0px 
+}
+.div-cep{
+  left: 1.5%;
+}

@@ -23,12 +23,9 @@ class PowerGenerator < ApplicationRecord
     trapezoidal
   ]
   include PgSearch
-
   pg_search_scope :search, against: [:name], using: {
     tsearch: { prefix: true }
   }
-
-  private
 
   def calc_cube_weight
     self.cube_weight = height * width * lenght * 300

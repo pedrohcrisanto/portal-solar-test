@@ -52,23 +52,6 @@ PowerGenerator.create!(
 )
 
 PowerGenerator.create!(
-  name: 'POLI HALF CELL', 
-  description: 'Eficiência média da célula de 17% 
-                PID Free
-                Garantia de 10 anos para o produto e Garantia linear de 25 anos 
-                Sistemas comerciais ou residenciais on-grid e off-grid', 
-  image_url: 'https://marketplace-img-production.s3.amazonaws.com/products/107162/large/20190808-1-1ap5e43.?1565248087', 
-  manufacturer: 'BYD', 
-  price: 12223.73,
-  kwp: 2.68,
-  height: 1,
-  width: 0.35,
-  lenght: 2,
-  weight: 110,
-  structure_type: :metalico
-)
-
-PowerGenerator.create!(
   name: 'CELLS MONO PERC', 
   description: 'Potência no ponto máximo de potência - 365W 
                 Corrente de Curto Circuito - 9,75A

@@ -11,9 +11,16 @@
                                 <%= power_generator.description %>
                             </p>
                     </div>
-                    <button type="button" class="btn btn-frete" data-toggle="modal" data-target="#modalExemplo">
-                        Calcular Frete
-                    </button>
+
+                    <div class="input-group mb-3 div-cep">
+                        <form class="form-inline" action="/freight">
+                            <input class="form-control input-cep" size="9" type="text" name="cep" placeholder="CEP">
+                             <input type="hidden" name="id_generator" value="<%= power_generator.id %>">
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-cep btn-outline-secondary" data-toggle="modal" type="submit" data-target="#modalExemplo">Calcular Frete</button>
+                        </form>
+                        </div>
+                    </div>
 
                     <!-- Modal -->
                     <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -26,7 +33,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    ...
+                               
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>

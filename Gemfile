@@ -19,6 +19,7 @@ gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem "font-awesome-rails"
 gem "pg_search"
+gem 'correios-frete'
 
 source "https://rails-assets.org" do
   gem "rails-assets-jquery"

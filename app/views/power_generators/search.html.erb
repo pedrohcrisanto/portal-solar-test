@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <% @power_generators_search.each do |power_generator| %>
+        <% @power_generators.each do |power_generator| %>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
                     <div class="card-body">
@@ -41,5 +41,5 @@
     </div>
 </div>
 <div class="container">
-
+    <%= paginate @power_generators, theme: 'twitter-bootstrap-4' %>
 </div>
