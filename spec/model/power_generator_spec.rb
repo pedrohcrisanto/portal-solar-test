@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe PowerGenerator do
     describe "#calc_cube_weight" do
-        context "calc cube weight" do
+        context "with valid result" do
             subject { described_class.new(  name: 'TRIFÁSICO 380V', 
                 description: '2 MPPTs para adaptação versátil a diferentes tipos ou quantidades de módulos construídos com diferentes alinhamentos    
                               Monitoramento inteligente de 4 strings e 80% de economia de tempo na detecção de falhas    

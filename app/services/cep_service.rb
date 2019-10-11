@@ -6,20 +6,20 @@ class CepService
   FORMAT = "json"
   
   def initialize(cep)
-    cep_econtrado = encontrar(cep) # hash
-    preencher_dados(cep_econtrado)
+    found_cep = find(cep)
+    fill_data(found_cep)
   end
 
   private
 
-  def preencher_dados(cep_econtrado)
-    @logradouro = cep_econtrado["logradouro"]
-    @bairro     = cep_econtrado["bairro"]
-    @localidade = cep_econtrado["localidade"]
-    @uf         = cep_econtrado["uf"]
+  def fill_data(found_cep)
+    @logradouro = found_cep["logradouro"]
+    @bairro     = found_cep["bairro"]
+    @localidade = found_cep["localidade"]
+    @uf         = found_cep["uf"]
   end
 
-  def encontrar(cep)
+  def find(cep)
     ActiveSupport::JSON.decode(
       Net::HTTP.get(
         URI("#{END_POINT}#{cep}/#{FORMAT}/")
