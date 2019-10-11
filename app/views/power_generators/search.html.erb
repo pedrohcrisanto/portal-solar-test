@@ -11,30 +11,18 @@
                                 <%= power_generator.description %>
                             </p>
                     </div>
-                    <button type="button" class="btn btn-frete" data-toggle="modal" data-target="#modalExemplo">
-                        Calcular Frete
-                    </button>
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Calculo de Frete</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    ...
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                    <button type="button" class="btn btn-primary">Calcular</button>
-                                </div>
-                            </div>
+                    <div class="input-group mb-3 div-cep">
+                        <form class="form-inline" action="/freight">
+                            <input class="form-control input-cep" size="9" type="text" name="cep" placeholder="CEP">
+                            <input type="hidden" name="id_generator" value="<%= power_generator.id %>">
+                            <div class="input-group-append">
+                                 <button class="btn btn-cep my-2 my-sm-0" type="submit">Calcular Frete</button>
+                        </form>
                         </div>
                     </div>
+
+  
                 </div>
             </div>
             <% end %>
