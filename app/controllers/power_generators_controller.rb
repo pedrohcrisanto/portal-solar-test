@@ -13,15 +13,21 @@ class PowerGeneratorsController < ApplicationController
   end
 
   def freight
-    gerador = PowerGenerator.find(1)
-    freight = Correios::Frete::Calculador.new(:cep_origem => "04602-002",
-                                            :cep_destino => "58101-245",
-                                            :peso => gerador.weight,
-                                            :comprimento => gerador.lenght,
-                                            :largura => gerador.width,
-                                            :altura => gerador.height)
-    calc_freight = freight.calcular :pac
-    @frete = calc_freight.valor
+    # gerador = PowerGenerator.find(1)
+    # freight = Correios::Frete::Calculador.new(:cep_origem => "04602-002",
+    #                                         :cep_destino => "58101-245",
+    #                                         :peso => gerador.weight,
+    #                                         :comprimento => gerador.lenght,
+    #                                         :largura => gerador.width,
+    #                                         :altura => gerador.height)
+    # calc_freight = freight.calcular :pac
+    # @frete = calc_freight.valor
+    frete = CepService.new(params[:cep])
+    frete_tabela = Freight.where(state: frete.uf)
+    frete_min = frete_tabela.minimum(:cost)
+    @power_generator = PowerGenerator.find(params[:id_generator])
+    @valor_frete = frete_min
+    @state = frete.uf
   end
 
   def new

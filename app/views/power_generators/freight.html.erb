@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <%= image_tag @power_generator.image_url, class: 'power_generator-card__img' %>
+                            <h5 class="text-center card-title"><%= @power_generator.name.upcase %></h5>
+                            <h5 class="text-center card-price"><%= number_to_currency(@power_generator.price, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %></h5>
+                            <p class="card-text">
+                                <%= @power_generator.description %>
+                            </p>
+                    </div>
+
+                    <div class="input-group mb-3 div-cep">
+                    <h5 class="text-center card-title">Valor do Frete: R$<%= @valor_frete %><br>para <%= %><%= @state %></h5>
+                        </div>
+                    </div>
+
+  
+                </div>
+            </div>
+    </div>
+</div>
